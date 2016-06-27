@@ -1,0 +1,120 @@
+<ion-view>
+  <ion-header-bar class="blue_bg">
+    <img src="img/login_header.jpg" class="header_img">
+  </ion-header-bar>
+
+  <ion-content>
+    <div class="catalogue_utility_bar blue_bg">
+      <label class="search_container white_text_placeholder">
+        <i class="icon ion-search placeholder-icon white_text"></i>
+        <input type="text" class="text-color-contrast search_text blue_bg" ng-model="q" placeholder="חיפוש">
+      </label>
+
+      <label class="filter_container" ng-click="cs.openCatalogueFiltersModal()">
+        <i class="icon ion-funnel"></i>
+      </label>
+
+      <div data-items-display-type>
+    </div>
+
+    <div class="items_content">
+      <ion-list class="text-center">
+        <ion-item class="catalogue_item cat_item_container display_big_pictures"
+                  ng-repeat="item in cs.catalogueItemsToView | filter:q as results"
+                  ng-class="{light_grey_bg: cs.isShown(item.shortCode)}">
+
+          <div class="item_img_container">
+            <div ng-class="{itemCommentTag: item.maExt.NOTE!=''}"></div>
+
+            <div data-load-item-pictures shortCode="{{ item.shortCode }}"></div>
+
+            <div class="item_amount_container"
+                 ng-class="{display_text_amount_active_placement: cs.isShown(item.shortCode)}"
+                 ng-click="cs.openItemAmountModal(item.shortCode)">
+              {{ cs.amountDisplay(item.amount) }}
+            </div>
+          </div>
+
+          <span class="item_name blue_text bold text-right" ng-click="cs.toggle(item.shortCode)"
+                ng-class="{right_orange_border: item.maExt.NOTE!=''}">
+            {{ item.langExt.product_name }}
+          </span>
+          <span class="item_shortCode">{{ item.shortCode }}</span>
+
+          <div class="text-center item_details_container light_grey_bg" ng-show="cs.isShown(item.shortCode)">
+
+            <div class="item_details blue_text">
+              <div class="item_details_right_side">
+                <div class="line_one full_width">
+                  <span ng-show="item.maExt.NOTE!=''" class="rtl float_right orange_text bold padding-left" ng-click="cs.openItemCommentPopUp(item.maExt.NOTE)">הודעה</span>
+                  <span class="rtl float_right padding-left">
+                    <span>ברקוד: </span>
+                    {{ item.barCode }}
+                  </span>
+                </div>
+                <div class="line_two">
+                  <span class="rtl float_right padding-left">
+                    <i class="icon ion-checkmark" ng-show="item.inMigvan"></i>
+                    <i class="icon ion-close" ng-show="!item.inMigvan"></i>
+                    <span>במגוון</span>
+                  </span>
+                  <span class="rtl float_right padding-left">
+                    <i class="icon ion-checkmark" ng-show="cs.itemStockStatus(item.ma.camut_melay)"></i>
+                    <i class="icon ion-close" ng-show="!cs.itemStockStatus(item.ma.camut_melay)"></i>
+                    <span>במלאי</span>
+                  </span>
+                  <span class="rtl float_right padding-left">
+                    <span ng-class="{strikethrough: item.products_icons.c6 == false}">מתאים לתלייה</span>
+                  </span>
+                </div>
+              </div>
+              <div class="item_details_right_side_small_pictures">
+                <div class="line_one">
+                  <span class="rtl float_right padding-left">
+                    <i class="icon ion-checkmark" ng-show="item.inMigvan"></i>
+                    <i class="icon ion-close" ng-show="!item.inMigvan"></i>
+                    <span>במגוון</span>
+                  </span>
+                </div>
+                <div class="line_two">
+                  <span class="rtl float_right padding-left">
+                    <i class="icon ion-checkmark" ng-show="cs.itemStockStatus(item.ma.camut_melay)"></i>
+                    <i class="icon ion-close" ng-show="!cs.itemStockStatus(item.ma.camut_melay)"></i>
+                    <span>במלאי</span>
+                  </span>
+                </div>
+                <div class="line_three">
+                  <span ng-show="item.maExt.NOTE!=''" class="rtl float_right orange_text bold padding-left" ng-click="cs.openItemCommentPopUp(item)">הודעה</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="item_details_left_side">
+                <div class="item_details_consumer">
+                  <span class="item_details_left_side_label bold">צרכן</span>
+                  <span class="item_details_left_side_value">{{ item.ma.calc10 }}</span>
+                </div>
+                <div class="item_details_profit">
+                  <span class="item_details_left_side_label bold">רווח</span>
+                  <span class="item_details_left_side_value">{{ cs.calculateItemProfit(item.ma.calc10, cs.getItemPrice(item)) }}%</span>
+                </div>
+                <div class="item_details_price" on-hold="cs.openItemPriceUpdateModal(item)">
+                  <span class="item_details_left_side_label bold">מחיר</span>
+                  <span class="item_details_left_side_value">{{ cs.getItemPrice(item) }}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-infinite-scroll
+        ng-if="cs.moreDataCanBeLoaded()"
+        icon="ion-loading-c"
+        on-infinite="cs.loadMore()"
+        distance="2%">
+      </ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,275 @@
+.items_display_type_container .icon{
+  font-size: 24px;
+  line-height: 35px;
+}
+
+.item_img_container img{
+  display: block;
+  z-index: 2;
+  position: relative;
+}
+
+.item_shortCode{
+  z-index: 2;
+}
+
+/* Big Pictures */
+
+.display_big_pictures{
+  overflow: hidden;
+}
+
+.display_big_pictures .item_shortCode{
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  background: white;
+  padding: 0 5px;
+  line-height: 1.2em;
+}
+
+.display_big_pictures .item_name {
+  display: block;
+  width: 100%;
+  line-height: 1.0em;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.display_big_pictures .item_details_container {
+  border-top: 2px solid #dddddd;
+  overflow: hidden;
+}
+
+.display_big_pictures .item_details{
+  display: block;
+  float: right;
+  width: 100%;
+}
+
+.display_big_pictures .item_details_right_side{
+  float: right;
+  width: 55%;
+  font-size: 12px;
+  line-height: 1.5em;
+  text-align: right;
+  padding: 5px 5px 5px 0;
+}
+
+.display_big_pictures .item_details_left_side{
+  float: right;
+  width: 45%;
+  line-height: 1.5em;
+  font-size: 16px;
+}
+
+.display_big_pictures .item_details_consumer{
+  width: 33%;
+  float: right;
+}
+
+.display_big_pictures .item_details_profit{
+  width: 33%;
+  float: right;
+}
+
+.display_big_pictures .item_details_price{
+  width: 34%;
+  float: right;
+}
+
+.display_big_pictures .item_details_left_side_label {
+  background: #e7e7e7;
+  padding-top: 5px;
+  padding-top: 0;
+}
+
+.display_big_pictures .item_details_left_side_label, .display_big_pictures .item_details_left_side_value{
+  width: 100%;
+  display: block;
+}
+
+.display_big_pictures .item_details_right_side_small_pictures{
+  display: none;
+}
+
+.display_big_pictures .item_img_container{
+  position: relative;
+  padding: 5px 5px 0 5px;
+}
+
+
+
+/* Small Pictures */
+
+.display_small_pictures{
+  width: 48%;
+  margin: 0 1%;
+  float: right;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding: 0;
+}
+
+.display_small_pictures .item_shortCode{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  background: white;
+  padding: 0 5px;
+  line-height: 1.2em;
+  font-size: 12px;
+}
+
+.display_small_pictures .item_name {
+  display: block;
+  width: 100%;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
+.display_small_pictures .item_details{
+  display: block;
+  float: right;
+  width: 100%;
+  padding: 0 5px 5px 0;
+  border-top: 2px solid #dddddd;
+}
+
+.display_small_pictures .item_details_right_side_small_pictures{
+  float: right;
+  width: 23%;
+  font-size: 10px;
+  line-height: 1.5em;
+}
+
+.display_small_pictures .item_details_left_side{
+  float: left;
+  width: 75%;
+  font-size: 14px;
+}
+
+.display_small_pictures .item_details_consumer{
+  width: 33%;
+  float: right;
+}
+
+.display_small_pictures .item_details_profit{
+  width: 33%;
+  float: right;
+}
+
+.display_small_pictures .item_details_price{
+  width: 34%;
+  float: right;
+}
+
+.display_small_pictures .item_details_left_side_label{
+  background: #e7e7e7;
+}
+
+.display_small_pictures .item_details_left_side_label, .display_small_pictures .item_details_left_side_value{
+  width: 100%;
+  display: block;
+  line-height: 1.5em;
+}
+
+.display_small_pictures .item_details_right_side{
+  display: none;
+}
+
+.display_small_pictures .item_img_container{
+  position: relative;
+  padding: 5px 5px 0 5px;
+}
+
+
+/* Text */
+
+.display_text{
+  margin-bottom: 0;
+}
+
+.display_text img{
+  display: none;
+}
+
+.display_text .item_shortCode{
+  position: absolute;
+  top: 9px;
+  right: 0;
+  padding: 0 5px;
+  line-height: 1.2em;
+  color: #4e76bb;
+  font-weight: bold;
+}
+
+.display_text .right_orange_border{
+  border-right: 2px solid orange
+}
+
+.display_text .item_name {
+  display: block;
+  width: 100%;
+  padding-right: 50px;
+}
+
+.display_text .display_text_amount_active_placement{
+  top: 4px;
+  left: 5px;
+  bottom: initial !important;
+  background: transparent;
+}
+
+.display_text .item_details{
+  display: block;
+  float: right;
+  width: 100%;
+  border-top: 2px solid #dddddd;
+  padding-right: 5px;
+}
+
+.display_text .item_details_right_side{
+  float: right;
+  width: 60%;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.display_text .item_details_left_side{
+  float: right;
+  width: 40%;
+}
+
+.display_text .item_details_consumer{
+  width: 33%;
+  float: right;
+}
+
+.display_text .item_details_profit{
+  width: 33%;
+  float: right;
+}
+
+.display_text .item_details_price{
+  width: 34%;
+  float: right;
+}
+
+.display_text .item_details_left_side_label{
+  background: #e7e7e7;
+}
+
+.display_text .item_details_left_side_label, .display_text .item_details_left_side_value{
+  width: 100%;
+  display: block;
+  line-height: 1.5em;
+}
+
+.display_text .item_details_right_side_small_pictures{
+  display: none;
+}
+
+.display_text .itemCommentTag{
+  display: none;
+}

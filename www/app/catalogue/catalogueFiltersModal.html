@@ -1,0 +1,136 @@
+<ion-modal-view>
+  <ion-content class="catalogue_filters_container">
+    <div class="list">
+      <div class="list">
+        <div class="row blue_bg white_text full_width">
+          <span class="text-center full_width padding bold">סינון ומיון מוצרים</span>
+        </div>
+        <div class="row light_grey_bg blue_text full_width rtl">
+          <span class="text-center full_width padding bold">מיין לפי (בחר שדות למיון לפי סדר)</span>
+        </div>
+        <div class="row rtl">
+          <div class="col-33">
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('shortCode')" ng-class="{grey_bg: cs.getFilterIndex('shortCode')!=-1}">
+              <span class="filters_filter_name blue_text">קוד</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('shortCode')!=-1">{{ cs.getFilterIndex('shortCode') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('ma.Makt')" ng-class="{grey_bg: cs.getFilterIndex('ma.Makt')!=-1}">
+              <span class="filters_filter_name blue_text">ברקוד</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('ma.Makt')!=-1">{{ cs.getFilterIndex('ma.Makt') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('ma.teur')" ng-class="{grey_bg: cs.getFilterIndex('ma.teur')!=-1}">
+              <span class="filters_filter_name blue_text">תאור</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('ma.teur')!=-1">{{ cs.getFilterIndex('ma.teur') }}</span>
+            </div>
+          </div>
+          <div class="col-33">
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('maExt.series')" ng-class="{grey_bg: cs.getFilterIndex('maExt.series')!=-1}">
+              <span class="filters_filter_name blue_text">סדרה</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('maExt.series')!=-1">{{ cs.getFilterIndex('maExt.series') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('maExt.brand')" ng-class="{grey_bg: cs.getFilterIndex('maExt.brand')!=-1}">
+              <span class="filters_filter_name blue_text">מותג</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('maExt.brand')!=-1">{{ cs.getFilterIndex('maExt.brand') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('ma.calc10')" ng-class="{grey_bg: cs.getFilterIndex('ma.calc10')!=-1}">
+              <span class="filters_filter_name blue_text">מחיר קניה</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('ma.calc10')!=-1">{{ cs.getFilterIndex('ma.calc10') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('ma.mechir10')" ng-class="{grey_bg: cs.getFilterIndex('ma.mechir10')!=-1}">
+              <span class="filters_filter_name blue_text">מחיר צרכן</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('ma.mechir10')!=-1">{{ cs.getFilterIndex('ma.mechir10') }}</span>
+            </div>
+          </div>
+          <div class="col-33">
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('mainGroup.groupName')" ng-class="{grey_bg: cs.getFilterIndex('mainGroup.groupName')!=-1}">
+              <span class="filters_filter_name blue_text">קבוצה ראשית</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('mainGroup.groupName')!=-1">{{ cs.getFilterIndex('mainGroup.groupName') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('subGroup.groupName')" ng-class="{grey_bg: cs.getFilterIndex('subGroup.groupName')!=-1}">
+              <span class="filters_filter_name blue_text">קבוצה משנית</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('subGroup.groupName')!=-1">{{ cs.getFilterIndex('subGroup.groupName') }}</span>
+            </div>
+            <div class="full_width ff_cont" ng-click="cs.filterCatalogueItems('subSubGroup.groupName')" ng-class="{grey_bg: cs.getFilterIndex('subSubGroup.groupName')!=-1}">
+              <span class="filters_filter_name blue_text">קבוצה תת משנית</span>
+              <span class="filters_filter_index" ng-show="cs.getFilterIndex('subSubGroup.groupName')!=-1">{{ cs.getFilterIndex('subSubGroup.groupName') }}</span>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <div class="row light_grey_bg blue_text full_width rtl">
+          <span class="text-center padding bold">שדות לסינון</span>{{ cs.catalogueItems.length }} פריטים
+        </div>
+        <div class="row rtl full_width">
+          <span class="float_right">מותג</span>
+          <span class="float_left">
+            {{ cs.getItemBrands().length }}
+            <select ng-model="cs.brandFilter" ng-options="i as i for i in cs.getItemBrands()" ng-change="cs.reFilterCatalogue()">
+              <option value=""></option>
+            </select>
+          </span>
+        </div>
+        <div class="row rtl full_width">
+          <span class="float_right">קבוצה ראשית</span>
+          <span class="float_left">
+            {{ cs.getItemMainGroups().length }}
+            <select ng-model="cs.mainGroupFilter" ng-options="i as i for i in cs.getItemMainGroups()" ng-change="cs.reFilterCatalogue()">
+              <option value=""></option>
+            </select>
+          </span>
+        </div>
+        <div class="row rtl full_width">
+          <span class="float_right">קבוצה משנית</span>
+          <span class="float_left">
+            {{ cs.getItemSubGroups().length }}
+            <select ng-model="cs.subGroupFilter" ng-options="i as i for i in cs.getItemSubGroups()" ng-change="cs.reFilterCatalogue()">
+              <option value=""></option>
+            </select>
+          </span>
+        </div>
+        <div class="row rtl full_width">
+          <span class="float_right">תת קבוצה משנית</span>
+          <span class="float_left">
+            {{ cs.getItemSubSubGroups().length }}
+            <select ng-model="cs.subSubGroupFilter" ng-options="i as i for i in cs.getItemSubSubGroups()" ng-change="cs.reFilterCatalogue()">
+              <option value=""></option>
+            </select>
+          </span>
+        </div>
+
+        <div class="row rtl full_width">
+          <span class="float_right">מחיר קניה</span>
+          <span class="">
+            <rzslider rz-slider-model="cs.itemMechironPriceslider.minValue"
+              rz-slider-high="cs.itemMechironPriceslider.maxValue"
+              rz-slider-options="cs.itemMechironPriceslider.options"></rzslider>
+          </span>
+        </div>
+        <div class="row rtl full_width">
+          <span class="float_right">מחיר צרכן</span>
+          <span class="">
+            <rzslider rz-slider-model="cs.itemConsumerPriceslider.minValue"
+              rz-slider-high="cs.itemConsumerPriceslider.maxValue"
+              rz-slider-options="cs.itemConsumerPriceslider.options"></rzslider>
+          </span>
+        </div>
+
+        <div class="row rtl full_width">
+          <span class="float_right">הצג רק מוצרים בתליה</span>
+          <span class="float_left">
+            <ion-checkbox ng-model="cs.hangableItems"></ion-checkbox>
+          </span>
+        </div>
+
+        <div class="row">
+          <div class="col col-50 blue_text greyer_bg button-transparent-container">
+            <button class="button button-transparent" ng-click="modal.hide()">ביטול</button>
+          </div>
+          <div class="col col-50 blue_text greyer_bg button-transparent-container">
+            <button class="button button-transparent" ng-click="cs.catalogueFiltersModalSubmit()">אישור</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,56 @@
+<ion-modal-view>
+  <ion-content class="item_amount_calc_container">
+    <div class="list">
+      <div class="row blue_bg white_text full_width">
+        <span class="text-center full_width padding bold">
+          <span ng-show="!cs.ipus.itemPriceDiscountEditActive">עדכון מחיר</span>
+          <span ng-show="cs.ipus.itemPriceDiscountEditActive">עדכון אחוז הנחה</span>
+        </span>
+      </div>
+      <div class="row blue_bg white_text full_width">
+        <span class="text-center full_width item_amount_modal_sum">{{ cs.ipus.displayCalcSum() }}</span>
+      </div>
+      <div class="row">
+        <div class="col col-50 light_grey_bg blue_text" ng-click="cs.ipus.updatePrice('0')">0</div>
+        <div class="col col-50 light_grey_bg blue_text" ng-click="cs.ipus.resetModalCalcSum()">c</div>
+      </div>
+      <div class="row">
+        <div class="col dl_col greyer_bg"
+             ng-class="{orange_text: cs.ipus.itemPriceDiscountEditActive, blue_text: !cs.ipus.itemPriceDiscountEditActive}"
+             ng-click="cs.ipus.toggleDiscountPercentEditMode()">
+          <span class="dl_col_amount">{{ cs.ipus.displayItemDiscountPercent() }}</span>
+          <span class="dl_col_label">הנחה</span>
+        </div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('9')">9</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('8')">8</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('7')">7</div>
+      </div>
+      <div class="row">
+        <div class="col dl_col blue_text greyer_bg" ng-click="cs.addToModalCalcSum(24)">
+          <span class="dl_col_amount mehiron_price" ng-click="cs.reStartModalCalcSum()">{{ cs.tmpItem.ma.mechir10 }}</span>
+          <span class="dl_col_label">מחירון</span>
+        </div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('6')">6</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('5')">5</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('4')">4</div>
+      </div>
+      <div class="row">
+        <div class="col blue_text greyer_bg" ng-click="cs.ipus.updatePrice('.')">
+          <span class="dl_col_amount">.</span>
+        </div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('3')">3</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('2')">2</div>
+        <div class="col blue_text" ng-click="cs.ipus.updatePrice('1')">1</div>
+      </div>
+
+      <div class="row">
+        <div class="col col-50 blue_text greyer_bg button-transparent-container">
+          <button class="button button-transparent" ng-click="modal.hide()">בטל</button>
+        </div>
+        <div class="col col-50 blue_text greyer_bg button-transparent-container">
+          <button class="button button-transparent" ng-click="cs.closeItemPriceUpdateModal()">אשר</button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,313 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .button{
+  font-size: 18px;
+}
+
+.view, .pane{
+  background: #e3e3e3;
+}
+
+.rtl{
+  direction: rtl;
+}
+
+.float_right{
+  float: right;
+}
+
+.float_left{
+  float: left;
+}
+
+.no_padding{
+  padding: 0 !important;
+}
+
+.no_border{
+  border: none !important;
+}
+
+.no_border_bottom{
+  border-bottom: none !important;
+}
+
+.strikethrough{
+  text-decoration:line-through
+}
+
+.full_width{
+  width: 100%;
+  display: block;
+  float: right;
+}
+
+
+/** Colors **/
+  .bold{
+    font-weight: bold;
+  }
+
+  .blue_bg{
+    background: #4d77bb !important;
+  }
+
+  .blue_text{
+    color: #4d77bb !important;
+  }
+
+  .light_grey_bg{
+    background: #f5f5f5 !important;
+  }
+
+  .grey_bg{
+    background: #a7a8ac !important;
+  }
+
+  .greyer_bg{
+    background: #e7e7e7;
+  }
+
+  .grey_text{
+    color: #a7a8ac !important;
+  }
+
+  .orange_text{
+    color: orange;
+  }
+
+  .white_text{
+    color: #fff !important;
+  }
+
+  .white_text_placeholder ::-webkit-input-placeholder {
+    color: #fff !important;
+  }
+
+  .white_text_placeholder :-moz-placeholder { /* Firefox 18- */
+    color: #fff !important;
+  }
+
+  .white_text_placeholder ::-moz-placeholder {  /* Firefox 19+ */
+    color: #fff !important;
+  }
+
+  .white_text_placeholder :-ms-input-placeholder {
+    color: #fff !important;
+  }
+
+
+
+/** Misc **/
+  .header_img{
+    height: 34px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+
+/** Login **/
+  .login_view{
+    background: white;
+  }
+
+  .login_header_container{
+    padding: 100px 0 40px 0;
+    float: right;
+    margin-bottom: 40px;
+  }
+
+  .login_header_container span{
+    color: white;
+    text-align: center;
+    width: 100%;
+    float: right;
+    font-size: 24px;
+    padding-top: 5px;
+  }
+
+  .login_form ::-webkit-input-placeholder {
+    color: #4d77bb;
+  }
+
+  .login_form :-moz-placeholder { /* Firefox 18- */
+    color: #4d77bb;
+  }
+
+  .login_form ::-moz-placeholder {  /* Firefox 19+ */
+    color: #4d77bb;
+  }
+
+  .login_form :-ms-input-placeholder {
+    color: #4d77bb;
+  }
+
+  .login_bottom_text_container{
+    position: absolute;
+    bottom: 20px;
+    right:0;
+    left: 0;
+  }
+
+  .login_bottom_text_container span{
+    font-size: 18px;
+    line-height: 1.3em;
+  }
+
+
+
+/** Catalogue **/
+  .catalogue_item{
+    width: 95%;
+    margin: 0 auto 20px auto;
+    padding: 0;
+  }
+
+  .catalogue_utility_bar{
+    width: 100%;
+    float: right;
+    line-height: 35px;
+    height: 35px;
+  }
+
+  .search_container{
+    float: right;
+    width: 80%;
+  }
+
+  .search_container i{
+    float: right;
+    width: 30px;
+    line-height: 40px;
+    height: 35px;
+  }
+
+  .search_container .search_text{
+    float: right;
+    display: inline;
+    text-align: right;
+    line-height: 35px;
+    height: 35px;
+    width: 85%;
+    font-size: 20px;
+    padding-top: 0!important;
+    color: #fff;
+  }
+
+  .filter_container{
+    float: right;
+    width: 10%;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .item_amount_calc_container{
+    direction: rtl;
+    text-align: center;
+  }
+
+  .item_amount_calc_container .row{
+    padding: 0;
+    margin: 0;
+  }
+
+  .item_amount_calc_container .col{
+    border: 1px solid black;
+    height: 25vw;
+    line-height: 25vw;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .item_amount_calc_container .dl_col {
+    line-height: unset;
+    padding-top: 6vw;
+  }
+
+  .item_amount_calc_container .dl_col .dl_col_amount{
+    font-size: 32px;
+    line-height: 0.75em;
+  }
+
+  .item_amount_calc_container .dl_col .dl_col_label{
+    font-size: 20px;
+  }
+
+  .item_amount_container{
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+    background: white;
+    padding: 5px 10px;
+    font-size: 20px;
+    line-height: 1.0em;
+    z-index: 2;
+  }
+
+  .arbitraryChangeActive{
+    color: orange!important;
+  }
+
+  .itemCommentTag{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 0 0;
+    border-color: #ff7700 transparent transparent transparent;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .item_amount_modal_sum{
+    font-size: 48px;
+    line-height: 48px;
+    padding: 15px;
+  }
+
+  .button-transparent-container{
+    padding: 0;
+  }
+
+  .button-transparent{
+    background: transparent;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mehiron_price{
+    font-size: 28px !important;
+  }
+
+  .ff_cont{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .filters_filter_index{
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    font-size: 8px;
+    color: white;
+    background: #4d77bb;
+    width: 12px;
+    height: 12px;
+    line-height: 13px;
+    text-align: center;
+    -webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;
+  }
+
+  .filters_filter_name{
+    float: right;
+    padding-right: 5px;
+  }
+

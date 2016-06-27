@@ -1,0 +1,30 @@
+<ion-modal-view class="login_view">
+  <ion-content>
+    <div class="login_header_container blue_bg">
+      <img src="img/login_header.jpg" style="width: 100%;">
+      <span>פלטפורמת מסחר מתקדמת</span>
+    </div>
+
+    <form>
+      <div class="list login_form rtl">
+        <label class="item item-input light_grey_bg">
+          <input type="text" ng-model="lc.loginData.username" class="blue_text" placeholder='שם משתמש' >
+        </label>
+        <label class="item item-input light_grey_bg">
+          <input type="password" ng-model="lc.loginData.password" class="blue_text" placeholder='סיסמא' >
+        </label>
+        <label class="item no_padding no_border_bottom">
+          <div class="assertive" style="text-align:center" ng-show="error">{{error}}</div>
+          <button class="button button-block button-light blue_text bold" ng-click="lc.loginProcess()">כניסה למערכת</button>
+        </label>
+      </div>
+    </form>
+
+    <div class="login_bottom_text_container grey_text">
+      <span class="text-center block rtl">מערכת buyOsale סגורה למשתמשים בלבד.</span>
+      <span class="text-center block rtl">לפתיחת חשבון ופרטים נוספים,</span>
+      <span class="text-center block rtl">נא לפנות למייל info@buyosale.com</span>
+    </div>
+    <!--<button class="button button-block button-clear button-calm" ng-click="forgot()">Forgot your password?</button>-->
+  </ion-content>
+</ion-modal-view>
