@@ -1,0 +1,25 @@
+<ion-modal-view ng-controller="LoginCtrl">
+  <!--<ion-header-bar class="bar-positive">-->
+    <!--<div class="buttons">-->
+      <!--<button class="button button-clear" ng-click="closeLogin()">Close</button>-->
+    <!--</div>-->
+  <!--</ion-header-bar>-->
+  <ion-content>
+    <img src="img/login_header.jpg" style="width: 100%;">
+    <form>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" ng-model="loginData.username" placeholder='שם משתמש' >
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model="loginData.password" placeholder='סיסמא' >
+        </label>
+        <label class="item">
+          <div class="assertive" style="text-align:center" ng-show="error">{{error}}</div>
+          <button class="button button-block button-positive" ng-click="login()">כניסה למערכת</button>
+        </label>
+      </div>
+    </form>
+    <!--<button class="button button-block button-clear button-calm" ng-click="forgot()">Forgot your password?</button>-->
+  </ion-content>
+</ion-modal-view>
